@@ -1,6 +1,14 @@
 ---
 import { SEO } from 'astro-seo'
 import Attribution from '../components/Attribution.astro'
+import Success from '../components/Success.astro'
+
+import '../styles/reset.css'
+import '../styles/fonts.css'
+
+import '../styles/variables.css'
+import '../styles/compositions/flow.css'
+
 ---
 
 <!doctype html>
@@ -12,12 +20,33 @@ import Attribution from '../components/Attribution.astro'
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
   </head>
-  <body>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <Attribution />
-    </footer>
+  <body class="m-0">
+    <div class="grid justify-center">
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <Attribution />
+      </footer>
+    </div>
+    <Success />
   </body>
 </html>
+
+<style is:global>
+  h1 {
+    @apply break-words text-step-3 font-bold color-secondary;
+  }
+  body, dialog {
+    @apply text-step-1 color-base font-base font-regular;
+  }
+
+  input[type=submit],
+  button  {
+    @apply pa-m w-full bg-base rounded-lg color-accent
+    font-bold text-step-0 text-wrap border-none
+    hover:bg-gradient-to-r from-#ff5476 via-primary to-primary
+    focus:bg-gradient-to-r from-#ff5476 via-primary to-primary focus:outline-none;
+  }
+
+</style>

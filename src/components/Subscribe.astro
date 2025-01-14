@@ -1,0 +1,29 @@
+<script>
+  const success = document.getElementById("success") as HTMLDialogElement;
+  const form = document.querySelector("#subscribe");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    success.showModal();
+  });
+</script>
+
+<form action="#" class="subscribe flow" id="subscribe">
+    <label for="email">Email address</label>
+    <input type="email" name="email" id="email" placeholder="email@company.com" />
+    <input type="submit" value="Subscribe to monthly newsletter" />
+</form>
+
+<style>
+  .subscribe {
+    @apply mt-xl;
+  }
+  label {
+    @apply font-bold block;
+  }
+  input[type=email] {
+    @apply pa-xs block rounded-lg w-full text-step-0 border-solid border-base-light focus:outline-base;
+    box-shadow: none;
+  }
+
+</style>

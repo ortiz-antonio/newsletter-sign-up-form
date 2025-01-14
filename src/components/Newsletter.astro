@@ -1,0 +1,32 @@
+---
+import coverDesktop from '../assets/images/illustration-sign-up-desktop.svg'
+import coverMobile from '../assets/images/illustration-sign-up-mobile.svg'
+import Subscribe from './Subscribe.astro'
+---
+
+<div class="max-w-screen">
+    <img src={coverMobile.src} alt="" class="h-auto w-full object-cover" />
+  <div class="flow w-full px-s-l">
+    <h1>Stay updated!</h1>
+
+    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+    <ul class="flow">
+      <li>Product discovery and building what matters</li>
+      <li>Measuring to ensure updates are a success</li>
+      <li>And much more!</li>
+    </ul>
+
+    <Subscribe />
+
+  </div>
+</div>
+
+<style>
+  ul {
+    list-style-image:url('../assets/images/icon-success.svg');
+  }
+   li {
+    @apply: relative pl-2;
+  }
+</style>

@@ -1,13 +1,28 @@
 ---
 import check from '../assets/images/icon-success.svg'
 ---
+<script>
+  const success = document.querySelector("#success") as HTMLDialogElement;
+  const btnDismiss = document.querySelector("#dismis") as HTMLButtonElement;
 
-<dialog id="success">
-  <img src={check.src} alt="" />
-  <h1>Thanks for subscribing!</h1>
-  <p>
-    A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription.
-  </p>
-  <button> Dismiss message</button>
+  btnDismiss.addEventListener("click", (event) => {
+    success.close();
+  });
+</script>
+
+<dialog id="success" class="h-full w-full border-none backdrop:bg-accent">
+  <div class="min-h-full flex flex-col">
+    <img src={check.src} alt="" width="50" height="50" />
+    <h1>Thanks for subscribing!</h1>
+    <p class="line-height-standart">
+      A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+      Please open it and click the button inside to confirm your subscription.
+    </p>
+    <button id="dismis" class="mt-auto"> Dismiss message</button>
+  </div>
 </dialog>
+
+<style>
+
+
+</style>
