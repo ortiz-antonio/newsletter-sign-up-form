@@ -4,20 +4,27 @@ import check from '../assets/images/icon-success.svg'
 <script>
   const success = document.querySelector("#success") as HTMLDialogElement;
   const btnDismiss = document.querySelector("#dismis") as HTMLButtonElement;
+  const submitBtn = document.getElementById("submit") as HTMLButtonElement;
+
 
   btnDismiss.addEventListener("click", (event) => {
     success.close();
+    submitBtn.setAttribute('aria-expanded', 'false')
+
   });
 </script>
 
 <dialog
   id="success"
+  aria-modal=true
+  aria-labelledby="dialogTitle"
+  aria-describedby="dialogDescription"
   class="h-full w-full border-none md:h-md md:w-md md:rounded-3xl backdrop:bg-accent md:backdrop:bg-base"
 >
   <div class="min-h-full flex flex-col">
     <img src={check.src} alt="" width="50" height="50" />
-    <h1>Thanks for subscribing!</h1>
-    <p class="line-height-standart">
+    <h1 id="dialogTitle">Thanks for subscribing!</h1>
+    <p class="line-height-standart" id="dialogDescription">
       A confirmation email has been sent to <b>ash@loremcompany.com</b>.
       Please open it and click the button inside to confirm your subscription.
     </p>

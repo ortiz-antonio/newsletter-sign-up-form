@@ -1,9 +1,11 @@
 <script>
   const success = document.getElementById("success") as HTMLDialogElement;
-  const form = document.querySelector("#subscribe");
+  const form = document.getElementById("subscribe");
+  const submitBtn = document.getElementById("submit") as HTMLButtonElement;
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
+    submitBtn.setAttribute('aria-expanded', 'true')
     success.showModal();
   });
 </script>
@@ -11,7 +13,12 @@
 <form action="#" class="subscribe flow" id="subscribe">
     <label for="email">Email address</label>
     <input type="email" name="email" id="email" placeholder="email@company.com" />
-    <input type="submit" value="Subscribe to monthly newsletter" />
+    <input
+      type="submit"
+      value="Subscribe to monthly newsletter"
+      aria-expanded="false"
+      id="submit"
+    />
 </form>
 
 <style>
