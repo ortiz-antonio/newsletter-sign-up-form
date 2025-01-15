@@ -1,20 +1,32 @@
 {
   "fontSize": {
+    "step-6": {
+      "$type": "dimension",
+      "$value": "clamp(2.0273rem, -3.6993rem + 14.3165vw, 3.1726rem)"
+    },
+    "step-5": {
+      "$type": "dimension",
+      "$value": "clamp(1.802rem, -2.407rem + 10.5226vw, 2.6438rem)"
+    },
+    "step-4": {
+      "$type": "dimension",
+      "$value": "clamp(1.6018rem, -1.4052rem + 7.5174vw, 2.2032rem)"
+    },
     "step-3": {
       "$type": "dimension",
-      "$value": "clamp(3.375rem, 2.6719rem + 1.7578vw, 3.7969rem)"
+      "$value": "clamp(1.4238rem, -0.637rem + 5.1521vw, 1.836rem)"
     },
     "step-2": {
       "$type": "dimension",
-      "$value": "clamp(2.25rem, 1.7813rem + 1.1719vw, 2.5313rem)"
+      "$value": "clamp(1.2656rem, -0.0562rem + 3.3047vw, 1.53rem)"
     },
     "step-1": {
       "$type": "dimension",
-      "$value": "clamp(1.5rem, 1.1875rem + 0.7813vw, 1.6875rem)"
+      "$value": "clamp(1.125rem, 0.375rem + 1.875vw, 1.275rem)"
     },
     "step-0": {
       "$type": "dimension",
-      "$value": "clamp(1rem, 0.7917rem + 0.5208vw, 1.125rem)"
+      "$value": "clamp(1rem, 0.6875rem + 0.7813vw, 1.0625rem)"
     }
   }
 }

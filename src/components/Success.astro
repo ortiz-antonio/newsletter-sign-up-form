@@ -10,7 +10,10 @@ import check from '../assets/images/icon-success.svg'
   });
 </script>
 
-<dialog id="success" class="h-full w-full border-none backdrop:bg-accent">
+<dialog
+  id="success"
+  class="h-full w-full border-none md:h-md md:w-md md:rounded-3xl backdrop:bg-accent md:backdrop:bg-base"
+>
   <div class="min-h-full flex flex-col">
     <img src={check.src} alt="" width="50" height="50" />
     <h1>Thanks for subscribing!</h1>

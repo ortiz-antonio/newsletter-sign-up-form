@@ -4,9 +4,12 @@ import coverMobile from '../assets/images/illustration-sign-up-mobile.svg'
 import Subscribe from './Subscribe.astro'
 ---
 
-<div class="max-w-screen">
-    <img src={coverMobile.src} alt="" class="h-auto w-full object-cover" />
-  <div class="flow w-full px-s-l">
+<div class="max-w-screen bg-accent md:grid md:grid-cols-[1.2fr_1fr] md:rounded-3xl">
+  <picture class="self-center md:order-2">
+    <source media="(min-width: 768px)" srcset={coverDesktop.src}>
+    <img src={coverMobile.src} alt="" class="h-auto w-full object-cover md:h-lg md:rounded-3xl md:pa-sm" />
+  </picture>
+  <div class="w-full self-center pa-sm">
     <h1>Stay updated!</h1>
 
     <p>Join 60,000+ product managers receiving monthly updates on:</p>

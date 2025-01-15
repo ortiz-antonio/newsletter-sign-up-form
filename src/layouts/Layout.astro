@@ -20,9 +20,9 @@ import '../styles/compositions/flow.css'
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
   </head>
-  <body class="m-0">
-    <div class="grid justify-center">
-      <main>
+  <body class="m-0 md:mt-unset md:bg-base">
+    <div class="grid place-content-center min-h-svh">
+      <main class="md:max-w-3xl">
         <slot />
       </main>
       <footer>
@@ -34,11 +34,15 @@ import '../styles/compositions/flow.css'
 </html>
 
 <style is:global>
+  /* html {
+    margin:0;
+    padding:0;
+  } */
   h1 {
-    @apply break-words text-step-3 font-bold color-secondary;
+    @apply break-words text-step-5 font-bold color-secondary;
   }
   body, dialog {
-    @apply text-step-1 color-base font-base font-regular;
+    @apply text-step-0 color-base font-base font-regular line-height-standart;
   }
 
   input[type=submit],
@@ -47,8 +51,7 @@ import '../styles/compositions/flow.css'
     font-bold text-step-0 text-wrap border-none
     hover:bg-gradient-to-r from-#ff5476 via-primary to-primary
     hover:shadow-lg hover:shadow-primary
-    focus:bg-gradient-to-r from-#ff5476 via-primary to-primary focus:outline-none
-    focus:shadow-lg focus:shadow-primary;
+    focus:focus:outline-primary
   }
 
 </style>

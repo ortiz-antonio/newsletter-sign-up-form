@@ -5,4 +5,9 @@ export default defineConfig({
   integrations: [
     UnoCSS(),
   ],
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+  },
 })

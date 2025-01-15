@@ -16,18 +16,24 @@ export default {
     'primary': 'var(--color-primary, hsl(4, 100%, 67%))',
   },
   fontSize: {
+    'step-6':
+      'var(--fontSize-step-6, clamp(2.0273rem, -3.6993rem + 14.3165vw, 3.1726rem))',
+    'step-5':
+      'var(--fontSize-step-5, clamp(1.802rem, -2.407rem + 10.5226vw, 2.6438rem))',
+    'step-4':
+      'var(--fontSize-step-4, clamp(1.6018rem, -1.4052rem + 7.5174vw, 2.2032rem))',
     'step-3':
-      'var(--fontSize-step-3, clamp(3.375rem, 2.6719rem + 1.7578vw, 3.7969rem))',
+      'var(--fontSize-step-3, clamp(1.4238rem, -0.637rem + 5.1521vw, 1.836rem))',
     'step-2':
-      'var(--fontSize-step-2, clamp(2.25rem, 1.7813rem + 1.1719vw, 2.5313rem))',
+      'var(--fontSize-step-2, clamp(1.2656rem, -0.0562rem + 3.3047vw, 1.53rem))',
     'step-1':
-      'var(--fontSize-step-1, clamp(1.5rem, 1.1875rem + 0.7813vw, 1.6875rem))',
+      'var(--fontSize-step-1, clamp(1.125rem, 0.375rem + 1.875vw, 1.275rem))',
     'step-0':
-      'var(--fontSize-step-0, clamp(1rem, 0.7917rem + 0.5208vw, 1.125rem))',
+      'var(--fontSize-step-0, clamp(1rem, 0.6875rem + 0.7813vw, 1.0625rem))',
   },
   fontWeight: {
     regular: 'var(--fontWeight-regular, 400)',
-    bold: 'var(--fontWeight-bold, 700)',
+    medium: 'var(--fontWeight-medium, 700)',
   },
   lineHeight: {
     flat: 'var(--lineHeight-flat, 1)',
@@ -39,22 +45,19 @@ export default {
     base: 'var(--fontFamily-base, Roboto, Arial, sans-serif)',
   },
   spacing: {
-    '3xs':
-      'var(--spacing-3xs, clamp(0.3125rem, 0.2083rem + 0.2604vw, 0.375rem))',
+    '3xs': 'var(--spacing-3xs, clamp(0.25rem, -0.375rem + 1.5625vw, 0.375rem))',
     '2xs':
-      'var(--spacing-2xs, clamp(0.5625rem, 0.3542rem + 0.5208vw, 0.6875rem))',
-    'xs': 'var(--spacing-xs, clamp(0.875rem, 0.5625rem + 0.7813vw, 1.0625rem))',
-    's': 'var(--spacing-s, clamp(1.125rem, 0.7083rem + 1.0417vw, 1.375rem))',
-    'm': 'var(--spacing-m, clamp(1.125rem, 0.7083rem + 1.0417vw, 1.375rem))',
-    'l': 'var(--spacing-l, clamp(2.25rem, 1.4167rem + 2.0833vw, 2.75rem))',
-    'xl': 'var(--spacing-xl, clamp(3.375rem, 2.125rem + 3.125vw, 4.125rem))',
-    '2xl': 'var(--spacing-2xl, clamp(4.5rem, 2.8333rem + 4.1667vw, 5.5rem))',
-    '3xl': 'var(--spacing-3xl, clamp(6.75rem, 4.25rem + 6.25vw, 8.25rem))',
-    '4xl':
-      'var(--spacing-4xl, clamp(7.875rem, 4.9583rem + 7.2917vw, 9.625rem))',
-    's-l':
-      'var(--spacing-s-l, clamp(1.125rem, -1.5833rem + 6.7708vw, 2.75rem))',
+      'var(--spacing-2xs, clamp(0.5rem, -0.4375rem + 2.3438vw, 0.6875rem))',
+    'xs': 'var(--spacing-xs, clamp(0.75rem, -0.8125rem + 3.9063vw, 1.0625rem))',
+    's': 'var(--spacing-s, clamp(1rem, -0.875rem + 4.6875vw, 1.375rem))',
+    'm': 'var(--spacing-m, clamp(1rem, -0.875rem + 4.6875vw, 1.375rem))',
+    'l': 'var(--spacing-l, clamp(2rem, -1.75rem + 9.375vw, 2.75rem))',
+    'xl': 'var(--spacing-xl, clamp(3rem, -2.625rem + 14.0625vw, 4.125rem))',
+    '2xl': 'var(--spacing-2xl, clamp(4rem, -3.5rem + 18.75vw, 5.5rem))',
+    '3xl': 'var(--spacing-3xl, clamp(6rem, -5.25rem + 28.125vw, 8.25rem))',
+    '4xl': 'var(--spacing-4xl, clamp(7rem, -6.125rem + 32.8125vw, 9.625rem))',
+    's-l': 'var(--spacing-s-l, clamp(1rem, -7.75rem + 21.875vw, 2.75rem))',
     'xs-m':
-      'var(--spacing-xs-m, clamp(0.875rem, 0.0417rem + 2.0833vw, 1.375rem))',
+      'var(--spacing-xs-m, clamp(0.75rem, -2.375rem + 7.8125vw, 1.375rem))',
   },
 }
