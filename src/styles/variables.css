@@ -1,7 +1,7 @@
 :root {
     --flow-space: 1em;
-    /* --fontSize-step-0:15px; */
     --un-shadow-inset: ;
     --un-ring-offset-shadow: 0 0 #0000;
     --un-ring-shadow: 0 0 #0000;
+    --color-primary: 4, 100%, 67%; 
 }
