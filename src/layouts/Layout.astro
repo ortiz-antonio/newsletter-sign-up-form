@@ -8,7 +8,6 @@ import '../styles/fonts.css'
 
 import '../styles/variables.css'
 import '../styles/compositions/flow.css'
-
 ---
 
 <!doctype html>
@@ -34,24 +33,21 @@ import '../styles/compositions/flow.css'
 </html>
 
 <style is:global>
-  /* html {
-    margin:0;
-    padding:0;
-  } */
+
   h1 {
     @apply break-words text-step-5 font-bold color-secondary;
   }
-  body, dialog {
+  body,
+  dialog {
     @apply text-step-0 color-base font-base font-regular line-height-standart;
   }
 
-  input[type=submit],
-  button  {
+  input[type='submit'],
+  button {
     @apply pa-m w-full bg-base rounded-lg color-accent
     font-bold text-step-0 text-wrap border-none
     hover:bg-gradient-to-r from-#ff5476 via-primary to-primary
     hover:shadow-lg hover:shadow-primary hover:outline-unset
-    focus:outline-base focus:outline-offset-4
+    focus:outline-base focus:outline-offset-4;
   }
-
 </style>

@@ -4,32 +4,53 @@ import coverMobile from '../assets/images/illustration-sign-up-mobile.svg'
 import Subscribe from './Subscribe.astro'
 ---
 
-<div class="max-w-screen bg-accent md:grid md:grid-cols-[1.2fr_1fr] md:rounded-3xl">
-  <picture class="self-center md:order-2">
-    <source media="(min-width: 768px)" srcset={coverDesktop.src}>
-    <img src={coverMobile.src} alt="" class="h-auto w-full object-cover md:h-lg md:rounded-3xl md:pa-sm" />
+<div class="newsletter">
+  <picture class="newsletter__picture">
+    <source media="(min-width: 768px)" srcset={coverDesktop.src} />
+    <img src={coverMobile.src} alt="" class="newsletter__cover" />
   </picture>
-  <div class="w-full self-center pa-sm">
+  <div class="newsletter__content">
     <h1>Stay updated!</h1>
 
     <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-    <ul class="flow">
+    <ul class="flow newsletter__benefits">
       <li>Product discovery and building what matters</li>
       <li>Measuring to ensure updates are a success</li>
       <li>And much more!</li>
     </ul>
 
     <Subscribe />
-
   </div>
 </div>
 
-<style>
-  ul {
-    list-style-image:url('../assets/images/icon-success.svg');
+<style is:global>
+  .newsletter {
+    @apply max-w-screen bg-accent md:grid md:grid-cols-[1.2fr_1fr] md:rounded-3xl;
   }
-   li {
-    @apply: relative pl-2;
+
+  .newsletter__picture {
+    @apply self-center md:order-2;
+  }
+  .newsletter__cover {
+    @apply h-auto w-full object-cover md:h-lg md:rounded-3xl md:pa-sm;
+  }
+
+  .newsletter__content {
+    @apply w-full self-center pa-sm;
+  }
+  .newsletter__benefits {
+    list-style: none;
+    padding: 0;
+  }
+  .newsletter__benefits li::before {
+    content: '';
+    padding-right: 1.5rem;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../assets/images/icon-success.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 </style>

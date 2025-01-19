@@ -1,11 +1,20 @@
-<p class="text-center text-wrap text-step-0 md:text-accent">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-  Coded by <a href="https://ortiz.studio">Antonio Ortiz</a>.
+<p class="attribution">
+  Challenge by <a
+    href="https://www.frontendmentor.io?ref=challenge"
+    target="_blank"
+    class="attribution__link"
+               >Frontend Mentor</a
+  >. Coded by <a href="https://ortiz.studio" class="attribution__link">Antonio Ortiz</a>.
 </p>
 
-<style>
-  a {
-    @apply pa-1 focus:outline-accent focus:outline-solid
-    hover:decoration-none;
+<style is:global>
+  .attribution {
+    @apply text-center text-wrap text-step-0 md:text-accent;
+  }
+
+  .attribution__link {
+    @apply pa-1 color-base md:color-accent;
+    @apply focus:outline-base focus:outline-solid md:focus:outline-accent;
+    @apply hover:decoration-none;
   }
 </style>

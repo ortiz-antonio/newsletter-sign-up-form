@@ -14,6 +14,7 @@ export default {
     'accent': 'var(--color-accent, hsl(0, 0%, 100%))',
     'base-light': 'var(--color-base-light, hsl(231, 7%, 60%))',
     'primary': 'var(--color-primary, hsl(4, 100%, 67%))',
+    'primary-20': 'var(--color-primary, hsla(4, 100%, 67%, 0.2))',
   },
   fontSize: {
     'step-6':

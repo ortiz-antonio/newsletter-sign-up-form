@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import token from '../build/tokens/breakpoints.json' with { type: 'json' };
+import token from "../build/tokens/breakpoints.json" with { type: "json" };
 
 export const spaceConfig = {
   minWidth: Number.parseInt(token.breakpoints.sm.$value),
@@ -9,5 +9,5 @@ export const spaceConfig = {
   maxSize: 22,
   positiveSteps: [1, 2, 3, 4, 6, 7],
   negativeSteps: [0.75, 0.5, 0.25],
-  customSizes: ['s-l', 'xs-m'],
+  customSizes: ["s-l", "xs-m"],
 };

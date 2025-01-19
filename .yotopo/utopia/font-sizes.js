@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import token from '../build/tokens/breakpoints.json' with { type: 'json' };
+import token from "../build/tokens/breakpoints.json" with { type: "json" };
 
 export const fontConfig = {
   minWidth: Number.parseInt(token.breakpoints.sm.$value),

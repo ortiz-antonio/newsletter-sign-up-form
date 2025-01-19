@@ -1,51 +1,46 @@
 <script>
-  const success = document.getElementById("success") as HTMLDialogElement;
-  const form = document.getElementById("subscribe") as HTMLFormElement;
-  const submitBtn = document.getElementById("submit") as HTMLButtonElement;
+  const success = document.getElementById('success') as HTMLDialogElement
+  const form = document.getElementById('subscribe') as HTMLFormElement
+  const submitBtn = document.getElementById('submit') as HTMLButtonElement
 
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data.email);
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData.entries())
+    console.log(data.email)
     submitBtn.setAttribute('aria-expanded', 'true')
-    success.showModal();
-  });
+    success.showModal()
+  })
 </script>
 
 <form class="subscribe flow" id="subscribe">
-    <div class="form-group relative">
-      <label for="email">Email address</label>
-    <input
-      type="email"
-      name="email"
-      id="email"
-      placeholder="email@company.com"
-      required
-    />
-    <span data-layout="error-message" class="absolute right-0 top-0 hidden text-step-0 color-primary font-bold">Valid email required</span>
-    </div>
-    <input
-      type="submit"
-      value="Subscribe to monthly newsletter"
-      aria-expanded="false"
-      id="submit"
-    />
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" name="email" id="email" placeholder="email@company.com" required />
+    <span data-layout="error-message">Valid email required</span>
+  </div>
+  <input type="submit" value="Subscribe to monthly newsletter" aria-expanded="false" id="submit" />
 </form>
 
-<style>
+<style is:global>
+  .subscribe .form-group {
+    position: relative;
+  }
 
-  label {
+  .subscribe label {
     @apply font-bold block;
   }
-  input[type=email] {
+  .subscribe input[type='email'] {
     @apply pa-xs block rounded-lg w-full text-step-0 border-solid border-base-light relative mt-3xs;
     @apply focus:outline-base focus:outline-offset-6;
-    @apply focus:invalid:bg-primary/20 focus:invalid:outline-primary focus:invalid:outline-offset-0 focus:invalid:placeholder-primary;
+    @apply focus:invalid:bg-primary-20 focus:invalid:outline-primary focus:invalid:outline-offset-0 focus:invalid:placeholder-primary;
   }
 
-  input[type=email]:focus:invalid + span[data-layout="error-message"] {
+  .subscribe input[type='email']:focus:invalid + span[data-layout='error-message'] {
     display: inline;
   }
 
+  .subscribe span[data-layout='error-message'] {
+    @apply absolute right-0 top-0 hidden text-step-0 color-primary font-bold;
+  }
 </style>
