@@ -19,9 +19,9 @@ import '../styles/compositions/flow.css'
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
   </head>
-  <body class="m-0 md:mt-unset md:bg-base">
-    <div class="grid place-content-center min-h-svh">
-      <main class="md:max-w-3xl">
+  <body>
+    <div class="wrapper">
+      <main>
         <slot />
       </main>
       <footer>
@@ -33,9 +33,14 @@ import '../styles/compositions/flow.css'
 </html>
 
 <style is:global>
-
+  .wrapper {
+    @apply grid place-content-center min-h-svh;
+  }
   h1 {
     @apply break-words text-step-5 font-bold color-secondary;
+  }
+  body {
+    @apply m-0 md:mt-unset md:bg-base ;
   }
   body,
   dialog {
