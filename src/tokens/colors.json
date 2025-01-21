@@ -1,0 +1,10 @@
+{
+  "colors": {
+    "base": "hsl(235, 18%, 26%)",
+    "secondary": "hsl(234, 29%, 20%)",
+    "accent": "hsl(0, 0%, 100%)",
+    "base-light": "hsl(231, 7%, 60%)",
+    "primary": "hsl(4, 100%, 67%)",
+    "primary-light": "hsla(4, 100%, 67%, 0.2)"
+  }
+}
