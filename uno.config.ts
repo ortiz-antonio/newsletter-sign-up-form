@@ -1,15 +1,25 @@
-import { defineConfig, presetUno, transformerDirectives } from 'unocss'
+import { defineConfig, presetUno, transformerVariantGroup } from 'unocss'
 
-import colorTokens from './src/tokens/colors.json'
-import fontSizeTokens from './src/tokens/font-sizes.json'
-import fontTokens from './src/tokens/fonts.json'
-import spacingTokens from './src/tokens/spaces.json'
+import blocks from './src/design-system/blocks'
+import compositions from './src/design-system/compositions'
+
+import colorTokens from './src/design-tokens/colors.json'
+import fontSizeTokens from './src/design-tokens/font-sizes.json'
+import fontTokens from './src/design-tokens/fonts.json'
+import spacingTokens from './src/design-tokens/spaces.json'
 
 export default defineConfig({
-  presets: [
-    presetUno(),
-  ],
-  transformers: [transformerDirectives()],
+  content: {
+    pipeline: {
+      include: [
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        'src/design-system/*.{js,ts}',
+        'src/design-tokens/*.{json}',
+      ],
+    },
+  },
+  presets: [presetUno({ preflight: false })],
+  transformers: [transformerVariantGroup()],
   extendTheme: (theme) => {
     return {
       ...theme,
@@ -21,5 +31,5 @@ export default defineConfig({
       spacing: spacingTokens.spacing,
     }
   },
-
+  shortcuts: [compositions, blocks],
 })

@@ -2,14 +2,25 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
-  integrations: [UnoCSS()],
+  integrations: [
+    UnoCSS(),
+    {
+      name: 'watch-tokens',
+      hooks: {
+        'astro:config:setup': ({ addWatchFile, config }) => {
+          addWatchFile(new URL('./src/design-system/compositions.js', config.root))
+          addWatchFile(new URL('./src/design-system/blocks.js', config.root))
+        },
+      },
+    },
+  ],
+
   build: {
     assets: '_assets',
   },
   vite: {
-    build: {
-      assetsInlineLimit: 0,
-      minify: false,
+    optimizeDeps: {
+      include: ['uno.config.ts'],
     },
   },
 })
