@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- <SEO title="Newsletter sign-up form" description="Frontend Mentor | Newsletter sign-up form with success message" /> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
+    <link rel="stylesheet" href="/assets/css/reset.css" webc:keep >
+    <link rel="stylesheet" href="/assets/css/global.css" webc:keep >
+    <style webc:keep @raw="getBundle('css')"></style>
+    <script type="module" src="assets/js/script.js" webc:keep></script>
+  </head>
+  <body class="[ m-0 md:m-unset ] [ typography-base ] [ bg-base ]">
+    <div class="center">
+      <main class="max-w-3xl" @raw="content">
+        
+      </main>
+    </div>
+    <footer>
+         <attribution  />
+    </footer>
+            <success />
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---js
+const layout = 'base.webc'
+---
+
+  <div class="success__wrapper [ flex flex-col justify-around pa-md ] 
+  [ min-h-full md:h-md md:w-md md:rounded-3xl ]
+   [ bg-accent ]">
+    <div>
+      <img src="/assets/images/icon-success.svg" alt="" width="50" height="50" />
+      <h1 id="dialogTitle">Thanks for subscribing!</h1>
+      <p id="dialogDescription">
+        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
+        confirm your subscription.
+      </p>
+    </div>
+    <a href="/" class="button-primary [ decoration-none text-align-center ]"> Dismiss message</a>
+  </div>

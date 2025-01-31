@@ -1,0 +1,42 @@
+<div class="newsletter [ flex flex-col md:flex-row-reverse  md:p-md ] [ md:rounded-3xl ] [ bg-accent ]">
+  <picture>
+    <source media="(min-width: 768px)" srcset="assets/images/illustration-sign-up-desktop.svg" />
+    <img src="assets/images/illustration-sign-up-mobile.svg" alt="" class="[ h-auto w-full object-cover ]" />
+  </picture>
+  <div class="newsletter__content [ self-center ] [ pa-md ]">
+    <h1 class="typography-heading">Stay updated!</h1>
+
+    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+    <ul class="newsletter__benefits flow">
+      <li>Product discovery and building what matters</li>
+      <li>Measuring to ensure updates are a success</li>
+      <li>And much more!</li>
+    </ul>
+
+        <subscribe webc:nokeep/>
+
+  </div>
+</div>
+
+<style>
+  .newsletter__content {
+    --flow-space: 1em;
+  }
+  .newsletter__benefits {
+    --flow-space: 1em;
+    list-style: none;
+    padding: 0;
+  }
+
+  .newsletter__benefits li::before {
+    content: '';
+    padding-right: 1.5rem;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('assets/images/icon-success.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+</style>

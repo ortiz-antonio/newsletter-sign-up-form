@@ -1,0 +1,4 @@
+---js
+const layout = 'base.webc'
+---
+<newsletter webc:nokeep/>
