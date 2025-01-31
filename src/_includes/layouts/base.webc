@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/assets/css/global.css" webc:keep >
     <style webc:keep @raw="getBundle('css')"></style>
     <script type="module" src="assets/js/script.js" webc:keep></script>
+    <title>Newsletter sign0up form</title>
+    <meta name="description" content="Frontend Mentor | Newsletter sign-up form with success message">
   </head>
   <body class="[ m-0 md:m-unset ] [ typography-base ] [ bg-base ]">
     <div class="center">
