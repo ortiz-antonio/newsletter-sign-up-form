@@ -13,7 +13,6 @@ form?.addEventListener('submit', (event) => {
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
     if (validateEmail(data.email)) {
-        console.log("valid");
         submitBtn.setAttribute('aria-expanded', 'true');
         success.showModal();
     } else {
