@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "base": {
+      "$type": "color",
+      "$value": "hsl(235, 18%, 26%)"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "hsl(234, 29%, 20%)"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "hsl(0, 0%, 100%)"
+    },
+    "base-light": {
+      "$type": "color",
+      "$value": "hsl(231, 7%, 60%)"
+    },
+    "primary": {
+      "$type": "color",
+      "$value": "hsl(4, 100%, 67%)"
+    }
+  }
+}

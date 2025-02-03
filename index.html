@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="/newsletter-sign-up-form/assets/css/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/newsletter-sign-up-form/assets/css/global.css"
+    />
+    <style>
+      .subscribe .form-group {
+        position: relative;
+      }
+
+      .subscribe
+        input[type="email"]:focus:invalid
+        + span[data-layout="error-message"] {
+        display: inline;
+      }
+      .newsletter__content {
+        --flow-space: 1em;
+      }
+      .newsletter__benefits {
+        --flow-space: 1em;
+        list-style: none;
+        padding: 0;
+      }
+
+      .newsletter__benefits li::before {
+        content: "";
+        padding-right: 1.5rem;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        background-image: url("assets/images/icon-success.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    </style>
+    <script
+      type="module"
+      src="/newsletter-sign-up-form/assets/js/script.js"
+    ></script>
+    <title>Newsletter sign-up form</title>
+    <meta
+      name="description"
+      content="Frontend Mentor | Newsletter sign-up form with success message"
+    />
+  </head>
+  <body class="[ m-0 md:m-unset ] typography-base bg-base">
+    <div class="center">
+      <main class="max-w-3xl">
+        <div
+          class="newsletter [ flex flex-col md:flex-row-reverse md:p-md ] md:rounded-3xl bg-accent"
+        >
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              src="assets/images/illustration-sign-up-mobile.svg"
+              alt=""
+              class="[ h-auto w-full object-cover ]"
+            />
+          </picture>
+          <div class="newsletter__content [ self-center ] pa-md">
+            <h1 class="typography-heading">Stay updated!</h1>
+
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+            <ul class="newsletter__benefits flow">
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
+
+            <form id="subscribe" action="confirm" class="subscribe flow">
+              <div class="form-group">
+                <label for="email" class="block font-bold">Email address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="email@company.com"
+                  required=""
+                  class="[ field field-invalid ]"
+                />
+                <span
+                  data-layout="error-message"
+                  aria-live="polite"
+                  class="label-error"
+                  >Valid email required</span
+                >
+              </div>
+              <input
+                type="submit"
+                value="Subscribe to monthly newsletter"
+                aria-expanded="false"
+                id="submit"
+                class="[ button-primary ]"
+              />
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <p class="attribution [ text-center text-wrap ] text-step-0 text-accent">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="link"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://ortiz.studio" class="link">Antonio Ortiz</a>.
+      </p>
+    </footer>
+    <dialog
+      id="success"
+      aria-modal="true"
+      aria-labelledby="dialogTitle"
+      aria-describedby="dialogDescription"
+      class="success [ h-100 md:h-md md:w-md md:rounded-3xl ] border-none typography-base backdrop:bg-accent md:backdrop:bg-base"
+    >
+      <div
+        class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]"
+      >
+        <div>
+          <img
+            src="/newsletter-sign-up-form/assets/images/icon-success.svg"
+            alt=""
+            width="50"
+            height="50"
+          />
+          <h1 id="dialogTitle">Thanks for subscribing!</h1>
+          <p id="dialogDescription">
+            A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+            Please open it and click the button inside to confirm your
+            subscription.
+          </p>
+        </div>
+        <button id="dismiss" class="button-primary">Dismiss message</button>
+      </div>
+    </dialog>
+  </body>
+</html>

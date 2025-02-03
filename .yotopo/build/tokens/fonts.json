@@ -1,0 +1,36 @@
+{
+  "fontWeight": {
+    "regular": {
+      "$type": "fontWeight",
+      "$value": "400"
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$value": "700"
+    }
+  },
+  "lineHeight": {
+    "flat": {
+      "$type": "lineHeight",
+      "$value": 1
+    },
+    "fine": {
+      "$type": "lineHeight",
+      "$value": 1.15
+    },
+    "standart": {
+      "$type": "lineHeight",
+      "$value": 1.5
+    },
+    "loose": {
+      "$type": "lineHeight",
+      "$value": 1.7
+    }
+  },
+  "fontFamily": {
+    "base": {
+      "$type": "font",
+      "$value": "Roboto, Arial, sans-serif"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[project]
+template = "fem-cube-eleventy"
+title = "Newsletter Sign-Up Form"
+name = "newsletter-sign-up-form"
+description = "Newsletter sign-up form solution with unocss and astro"
+directory = "/home/ortiz/dev/frontend-mentor/newsletter-sign-up-form"
+
+[project.author]
+name = "Antonio Ortiz"
+username = "ortiz-antonio"
+url = "https://ortiz.studio"
+
+[project.links]
+repository = "git@github.com:ortiz-antonio/newsletter-sign-up-form.git"
+homepage = "https://ortiz-antonio.github.io/newsletter-sign-up-form"
