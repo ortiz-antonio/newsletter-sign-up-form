@@ -2,9 +2,9 @@
 const layout = 'base.webc'
 ---
 
-  <div class="success__wrapper [ flex flex-col justify-around pa-md ] 
-  [ min-h-full md:h-md md:w-md md:rounded-3xl ]
-   [ bg-accent ]">
+<div class="[ h-100 md:h-md md:w-md md:rounded-3xl ] [ bg-accent ]">
+
+  <div class="success__wrapper [ flex flex-col justify-around pa-md h-100 ] ">
     <div>
       <img src="/assets/images/icon-success.svg" alt="" width="50" height="50" />
       <h1 id="dialogTitle">Thanks for subscribing!</h1>
@@ -15,3 +15,4 @@ const layout = 'base.webc'
     </div>
     <a href="/" class="button-primary [ decoration-none text-align-center ]"> Dismiss message</a>
   </div>
+</div>
