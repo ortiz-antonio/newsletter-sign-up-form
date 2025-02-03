@@ -3,17 +3,23 @@ const form = document.getElementById('subscribe');
 const inputEmail = document.getElementById('email');
 const submitBtn = document.getElementById('submit');
 
+inputEmail?.addEventListener('input', () => {
+    inputEmail.setCustomValidity(''); // Clear any previous validation message
+    inputEmail.checkValidity(); // Re-check validity
+});
+
 form?.addEventListener('submit', (event) => {
     event.preventDefault()
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
     if (validateEmail(data.email)) {
-        // inputEmail.classList.remove("invalid");
+        console.log("valid");
         submitBtn.setAttribute('aria-expanded', 'true');
         success.showModal();
     } else {
         inputEmail.focus();
         inputEmail.setCustomValidity("Invalid email format.");
+        form.reportValidity();
     }
 
 })

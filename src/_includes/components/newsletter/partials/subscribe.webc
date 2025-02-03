@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="email" class="block font-bold">Email address</label>
     <input type="email" name="email" id="email" placeholder="email@company.com" class="[ field field-invalid ]" required />
-    <span data-layout="error-message" class="label-error">Valid email required</span>
+    <span data-layout="error-message" aria-live="polite" class="label-error">Valid email required</span>
   </div>
   <input
     type="submit"
