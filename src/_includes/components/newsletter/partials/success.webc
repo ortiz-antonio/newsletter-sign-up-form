@@ -3,6 +3,7 @@
   aria-modal="true"
   aria-labelledby="dialogTitle"
   aria-describedby="dialogDescription"
+  role="dialog"
   class="success
   [ h-100 md:h-md md:w-md md:rounded-3xl ] [  border-none ] [  typography-base backdrop:bg-accent md:backdrop:bg-base ]"
 >
