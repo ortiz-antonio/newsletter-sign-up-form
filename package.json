@@ -8,7 +8,8 @@
     "build:css": "pnpm unocss src/**/*.webc src/design-system/*.js -o dist/assets/css/style.css",
     "build:site": "pnpm eleventy",
     "build": "concurrently \"pnpm build:site\" \"pnpm build:css\"",
-    "serve": "concurrently \"pnpm build:site --serve\" \"pnpm build:css --watch\""
+    "serve": "concurrently \"pnpm build:site --serve\" \"pnpm build:css --watch\"",
+    "pages": "gh-pages -d dist -b deploy"
   },
   "keywords": [],
   "author": "",
