@@ -1,98 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <link
-      rel="stylesheet"
-      href="/newsletter-sign-up-form/assets/css/reset.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/newsletter-sign-up-form/assets/css/global.css"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="stylesheet" href="/newsletter-sign-up-form/assets/css/reset.css">
+    <link rel="stylesheet" href="/newsletter-sign-up-form/assets/css/global.css">
     <style></style>
-    <script
-      type="module"
-      src="/newsletter-sign-up-form/assets/js/script.js"
-    ></script>
+    <script type="module" src="/newsletter-sign-up-form/assets/js/script.js"></script>
     <title>Newsletter sign-up form</title>
-    <meta
-      name="description"
-      content="Frontend Mentor | Newsletter sign-up form with success message"
-    />
+    <meta name="description" content="Frontend Mentor | Newsletter sign-up form with success message">
   </head>
   <body class="[ m-0 md:m-unset ] typography-base bg-base">
     <div class="center">
-      <main class="max-w-3xl">
-        <div class="[ h-100 md:h-md md:w-md md:rounded-3xl ] bg-accent">
-          <div
-            class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]"
-          >
-            <div>
-              <img
-                src="/newsletter-sign-up-form/assets/images/icon-success.svg"
-                alt=""
-                width="50"
-                height="50"
-              />
-              <h1 id="dialogTitle">Thanks for subscribing!</h1>
-              <p id="dialogDescription">
-                A confirmation email has been sent to
-                <b>ash@loremcompany.com</b>. Please open it and click the button
-                inside to confirm your subscription.
-              </p>
-            </div>
-            <a
-              href="/newsletter-sign-up-form/"
-              class="button-primary [ decoration-none text-align-center ]"
-            >
-              Dismiss message</a
-            >
-          </div>
-        </div>
-      </main>
+      <main class="max-w-3xl"><div class="[ h-100 md:h-md md:w-md md:rounded-3xl ] bg-accent">
+
+  <div class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]">
+    <div>
+      <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
+      <h1 id="dialogTitle">Thanks for subscribing!</h1>
+      <p id="dialogDescription">
+        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
+        confirm your subscription.
+      </p>
+    </div>
+    <a href="/newsletter-sign-up-form/" class="button-primary [ decoration-none text-align-center ]"> Dismiss message</a>
+  </div>
+</div></main>
     </div>
     <footer>
-      <p class="attribution [ text-center text-wrap ] text-step-0 text-accent">
-        Challenge by
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-          class="link"
-          >Frontend Mentor</a
-        >. Coded by
-        <a href="https://ortiz.studio" class="link">Antonio Ortiz</a>.
+         <p class="attribution [ text-center text-wrap ] text-step-0 text-accent">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="link">Frontend Mentor</a>.
+  Coded by <a href="https://ortiz.studio" class="link">Antonio Ortiz</a>.
+</p>
+</footer>
+            <dialog id="success" aria-modal="true" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" class="success [ h-100 md:h-md md:w-md md:rounded-3xl ] border-none typography-base backdrop:bg-accent md:backdrop:bg-base">
+  <div class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]">
+    <div>
+      <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
+      <h1 id="dialogTitle">Thanks for subscribing!</h1>
+      <p id="dialogDescription">
+        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
+        confirm your subscription.
       </p>
-    </footer>
-    <dialog
-      id="success"
-      aria-modal="true"
-      aria-labelledby="dialogTitle"
-      aria-describedby="dialogDescription"
-      class="success [ h-100 md:h-md md:w-md md:rounded-3xl ] border-none typography-base backdrop:bg-accent md:backdrop:bg-base"
-    >
-      <div
-        class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]"
-      >
-        <div>
-          <img
-            src="/newsletter-sign-up-form/assets/images/icon-success.svg"
-            alt=""
-            width="50"
-            height="50"
-          />
-          <h1 id="dialogTitle">Thanks for subscribing!</h1>
-          <p id="dialogDescription">
-            A confirmation email has been sent to <b>ash@loremcompany.com</b>.
-            Please open it and click the button inside to confirm your
-            subscription.
-          </p>
-        </div>
-        <button id="dismiss" class="button-primary">Dismiss message</button>
-      </div>
-    </dialog>
-  </body>
+    </div>
+    <button id="dismiss" class="button-primary"> Dismiss message</button>
+  </div>
+</dialog>
+</body>
 </html>
