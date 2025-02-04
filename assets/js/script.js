@@ -14,9 +14,12 @@ form?.addEventListener("submit", (event) => {
   const data = Object.fromEntries(formData.entries());
   if (validateEmail(data.email)) {
     submitBtn.setAttribute("aria-expanded", "true");
+    inputEmail.setAttribute("aria-invalid", "false");
+
     success.showModal();
   } else {
     inputEmail.focus();
+    inputEmail.setAttribute("aria-invalid", "true");
     inputEmail.setCustomValidity("Invalid email format.");
     form.reportValidity();
   }
