@@ -13,10 +13,9 @@ form?.addEventListener('submit', (event) => {
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
     if (validateEmail(data.email)) {
-        submitBtn.setAttribute('aria-expanded', 'true');
         inputEmail.setAttribute('aria-invalid', 'false');
+        window.location.href = 'success';
 
-        success.showModal();
     } else {
         inputEmail.focus();
         inputEmail.setAttribute('aria-invalid', 'true');
@@ -27,11 +26,6 @@ form?.addEventListener('submit', (event) => {
 })
 
 const btnDismiss = document.querySelector('#dismiss');
-
-btnDismiss.addEventListener('click', (event) => {
-    success.close()
-    submitBtn.setAttribute('aria-expanded', 'false')
-})
 
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
