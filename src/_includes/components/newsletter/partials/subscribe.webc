@@ -10,6 +10,7 @@
     value="Subscribe to monthly newsletter"
     id="submit"
     class="[ button-primary ]"
+    autocomplete="email"
   />
 </form>
 
