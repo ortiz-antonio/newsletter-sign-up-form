@@ -25,8 +25,6 @@ form?.addEventListener('submit', (event) => {
 
 })
 
-const btnDismiss = document.querySelector('#dismiss');
-
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
