@@ -1,10 +1,10 @@
-<form class="subscribe flow" id="subscribe" action="/success/" method="get" novalidate>
+<form class="subscribe flow" data-js="subscribe" action="/success/" method="get" novalidate>
   <div class="form-group">
     <label for="email" class="block font-bold">Email address</label>
     <input 
     type="email" 
     name="email" 
-    id="email" 
+    data-js="email" 
     aria-describedby="email-error"
     aria-invalid="false"
     aria-required="true"
@@ -18,7 +18,7 @@
   <input
     type="submit"
     value="Subscribe to monthly newsletter"
-    id="submitBtn"
+    data-js="submit"
     class="[ button-primary ]"
     autocomplete="email"
   />
@@ -37,3 +37,45 @@
     display: inline;
   }
 </style>
+
+<script webc:keep>
+const form = document.querySelector('[data-js="subscribe"')
+const inputEmail = document.querySelector('[data-js="email"]');
+const submitBtn = document.querySelector('[data-js="submit"]');
+
+inputEmail?.addEventListener("blur", (event) => {
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   setValid(inputEmail);
+  } else {
+    setInvalid(inputEmail);
+  }
+});
+
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   form.submit();
+  } else {
+    inputEmail.focus();
+    form.reportValidity();
+  }
+});
+
+function setInvalid(input){
+  inputEmail.setAttribute("aria-invalid", "true");
+}
+
+function setValid(input){
+  inputEmail.setAttribute("aria-invalid", "false");
+}
+
+function validateEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+</script>
