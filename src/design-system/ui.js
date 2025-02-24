@@ -22,7 +22,7 @@ export default {
     `,
 
   "field-invalid": `
-      focus:invalid:(bg-primary-light outline-primary outline-offset-0 placeholder-primary);
+      focus:user-invalid:(bg-primary-light outline-primary outline-offset-0 placeholder-primary);
     `,
 
   "label-error": "absolute right-0 top-0 hidden text-step-0 color-primary",
