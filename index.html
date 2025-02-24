@@ -11,7 +11,11 @@
     position: relative;
   }
 
-  .subscribe input[type='email']:focus:invalid + span[data-layout='error-message'] {
+  span[data-layout='error-message'] {
+    display: none;
+  }
+
+  .subscribe input[type='email']:user-invalid + span[data-layout='error-message'] {
     display: inline;
   }
 .newsletter__content {
@@ -55,13 +59,13 @@
       <li>And much more!</li>
     </ul>
 
-        <form id="subscribe" action="confirm" novalidate="" class="subscribe flow">
+        <form id="subscribe" action="/newsletter-sign-up-form/success/" method="get" novalidate="" class="subscribe flow">
   <div class="form-group">
     <label for="email" class="block font-bold">Email address</label>
-    <input type="email" name="email" id="email" placeholder="email@company.com" aria-describedby="email-error" required="" class="[ field field-invalid ]">
+    <input type="email" name="email" id="email" aria-describedby="email-error" aria-invalid="false" aria-required="true" required="" autocomplete="email" placeholder="email@company.com" class="[ field field-invalid ]">
     <span data-layout="error-message" aria-live="polite" id="email-error" class="label-error">Valid email required</span>
   </div>
-  <input type="submit" value="Subscribe to monthly newsletter" aria-expanded="false" id="submit" class="[ button-primary ]">
+  <input type="submit" value="Subscribe to monthly newsletter" id="submitBtn" autocomplete="email" class="[ button-primary ]">
 </form>
 
 
@@ -77,18 +81,6 @@
   Coded by <a href="https://ortiz.studio" class="link">Antonio Ortiz</a>.
 </p>
 </footer>
-            <dialog id="success" aria-modal="true" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" class="success [ h-100 md:h-md md:w-md md:rounded-3xl ] border-none typography-base backdrop:bg-accent md:backdrop:bg-base">
-  <div class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]">
-    <div>
-      <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
-      <h1 id="dialogTitle">Thanks for subscribing!</h1>
-      <p id="dialogDescription">
-        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
-        confirm your subscription.
-      </p>
-    </div>
-    <button id="dismiss" class="button-primary"> Dismiss message</button>
-  </div>
-</dialog>
+  
 </body>
 </html>

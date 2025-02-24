@@ -1,39 +1,39 @@
-const success = document.getElementById('success');
-const form = document.getElementById('subscribe');
-const inputEmail = document.getElementById('email');
-const submitBtn = document.getElementById('submit');
+const success = document.getElementById("success");
+const form = document.getElementById("subscribe");
+const inputEmail = document.getElementById("email");
+const submitBtn = document.getElementById("submitBtn");
 
-inputEmail?.addEventListener('input', () => {
-    inputEmail.setCustomValidity(''); // Clear any previous validation message
-    inputEmail.checkValidity(); // Re-check validity
+inputEmail?.addEventListener("blur", (event) => {
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   setValid(inputEmail);
+  } else {
+    setInvalid(inputEmail);
+  }
 });
 
-form?.addEventListener('submit', (event) => {
-    event.preventDefault()
-    const formData = new FormData(form)
-    const data = Object.fromEntries(formData.entries())
-    if (validateEmail(data.email)) {
-        submitBtn.setAttribute('aria-expanded', 'true');
-        inputEmail.setAttribute('aria-invalid', 'false');
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   form.submit();
+  } else {
+    inputEmail.focus();
+    form.reportValidity();
+  }
+});
 
-        success.showModal();
-    } else {
-        inputEmail.focus();
-        inputEmail.setAttribute('aria-invalid', 'true');
-        inputEmail.setCustomValidity("Invalid email format.");
-        form.reportValidity();
-    }
+function setInvalid(input){
+  inputEmail.setAttribute("aria-invalid", "true");
+}
 
-})
-
-const btnDismiss = document.querySelector('#dismiss');
-
-btnDismiss.addEventListener('click', (event) => {
-    success.close()
-    submitBtn.setAttribute('aria-expanded', 'false')
-})
+function setValid(input){
+  inputEmail.setAttribute("aria-invalid", "false");
+}
 
 function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
 }

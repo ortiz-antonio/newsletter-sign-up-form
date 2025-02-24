@@ -21,13 +21,29 @@
       <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
       <h1 id="dialogTitle">Thanks for subscribing!</h1>
       <p id="dialogDescription">
-        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
+        A confirmation email has been sent to <b id="email" aria-live="polite"></b>. Please open it and click the button inside to
         confirm your subscription.
       </p>
     </div>
     <a href="/newsletter-sign-up-form/" class="button-primary [ decoration-none text-align-center ]"> Dismiss message</a>
   </div>
-</div></main>
+</div>
+
+<script>
+const url = new URL(window.location.href);
+
+const email = url.searchParams.get('email');
+const decodedEmail = email ? decodeURIComponent(email) : null;
+
+if(decodedEmail){
+  const emailView = document.querySelector("#email");
+  emailView.textContent = decodedEmail;
+}else {
+  window.location.href = "/";
+}
+
+
+</script></main>
     </div>
     <footer>
          <p class="attribution [ text-center text-wrap ] text-step-0 text-accent">
@@ -35,18 +51,6 @@
   Coded by <a href="https://ortiz.studio" class="link">Antonio Ortiz</a>.
 </p>
 </footer>
-            <dialog id="success" aria-modal="true" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" class="success [ h-100 md:h-md md:w-md md:rounded-3xl ] border-none typography-base backdrop:bg-accent md:backdrop:bg-base">
-  <div class="success__wrapper [ flex flex-col justify-around pa-md h-100 ]">
-    <div>
-      <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
-      <h1 id="dialogTitle">Thanks for subscribing!</h1>
-      <p id="dialogDescription">
-        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
-        confirm your subscription.
-      </p>
-    </div>
-    <button id="dismiss" class="button-primary"> Dismiss message</button>
-  </div>
-</dialog>
+  
 </body>
 </html>
