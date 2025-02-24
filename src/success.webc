@@ -9,10 +9,26 @@ const layout = 'base.webc'
       <img src="/assets/images/icon-success.svg" alt="" width="50" height="50" />
       <h1 id="dialogTitle">Thanks for subscribing!</h1>
       <p id="dialogDescription">
-        A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to
+        A confirmation email has been sent to <b id="email" aria-live="polite"></b>. Please open it and click the button inside to
         confirm your subscription.
       </p>
     </div>
     <a href="/" class="button-primary [ decoration-none text-align-center ]"> Dismiss message</a>
   </div>
 </div>
+
+<script webc:keep>
+const url = new URL(window.location.href);
+
+const email = url.searchParams.get('email');
+const decodedEmail = email ? decodeURIComponent(email) : null;
+
+if(decodedEmail){
+  const emailView = document.querySelector("#email");
+  emailView.textContent = decodedEmail;
+}else {
+  window.location.href = "/";
+}
+
+
+</script>

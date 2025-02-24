@@ -1,14 +1,24 @@
-<form class="subscribe flow" id="subscribe" action="success" novalidate>
+<form class="subscribe flow" id="subscribe" action="/success/" method="get" novalidate>
   <div class="form-group">
     <label for="email" class="block font-bold">Email address</label>
-    <input type="email" name="email" id="email" placeholder="email@company.com" class="[ field field-invalid ]"
-    aria-describedby="email-error" required autocomplete="email" />
+    <input 
+    type="email" 
+    name="email" 
+    id="email" 
+    aria-describedby="email-error"
+    aria-invalid="false"
+    aria-required="true"
+    required 
+    autocomplete="email"
+    placeholder="email@company.com" 
+    class="[ field field-invalid ]"
+    />
     <span data-layout="error-message" aria-live="polite" class="label-error" id="email-error">Valid email required</span>
   </div>
   <input
     type="submit"
     value="Subscribe to monthly newsletter"
-    id="submit"
+    id="submitBtn"
     class="[ button-primary ]"
     autocomplete="email"
   />
@@ -19,7 +29,11 @@
     position: relative;
   }
 
-  .subscribe input[type='email']:focus:invalid + span[data-layout='error-message'] {
+  span[data-layout='error-message'] {
+    display: none;
+  }
+
+  .subscribe input[type='email']:user-invalid + span[data-layout='error-message'] {
     display: inline;
   }
 </style>
