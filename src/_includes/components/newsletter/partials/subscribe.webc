@@ -3,7 +3,8 @@
     <label for="email" class="block font-bold">Email address</label>
     <input 
     type="email" 
-    name="email" 
+    name="email"
+    id="email"
     data-js="email" 
     aria-describedby="email-error"
     aria-invalid="false"
