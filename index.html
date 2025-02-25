@@ -37,7 +37,6 @@
     background-size: contain;
     background-repeat: no-repeat;
   }</style>
-    <script type="module" src="/newsletter-sign-up-form/assets/js/script.js"></script>
     <title>Newsletter sign-up form</title>
     <meta name="description" content="Frontend Mentor | Newsletter sign-up form with success message">
   </head>
@@ -59,17 +58,58 @@
       <li>And much more!</li>
     </ul>
 
-        <form id="subscribe" action="/newsletter-sign-up-form/success/" method="get" novalidate="" class="subscribe flow">
+        <form data-js="subscribe" action="/newsletter-sign-up-form/success/" method="get" novalidate="" class="subscribe flow">
   <div class="form-group">
     <label for="email" class="block font-bold">Email address</label>
-    <input type="email" name="email" id="email" aria-describedby="email-error" aria-invalid="false" aria-required="true" required="" autocomplete="email" placeholder="email@company.com" class="[ field field-invalid ]">
+    <input type="email" name="email" data-js="email" aria-describedby="email-error" aria-invalid="false" aria-required="true" required="" autocomplete="email" placeholder="email@company.com" class="[ field field-invalid ]">
     <span data-layout="error-message" aria-live="polite" id="email-error" class="label-error">Valid email required</span>
   </div>
-  <input type="submit" value="Subscribe to monthly newsletter" id="submitBtn" autocomplete="email" class="[ button-primary ]">
+  <input type="submit" value="Subscribe to monthly newsletter" data-js="submit" autocomplete="email" class="[ button-primary ]">
 </form>
 
 
-</div>
+
+<script>
+const form = document.querySelector('[data-js="subscribe"')
+const inputEmail = document.querySelector('[data-js="email"]');
+const submitBtn = document.querySelector('[data-js="submit"]');
+
+inputEmail?.addEventListener("blur", (event) => {
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   setValid(inputEmail);
+  } else {
+    setInvalid(inputEmail);
+  }
+});
+
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  if (validateEmail(data.email)) {
+   form.submit();
+  } else {
+    inputEmail.focus();
+    form.reportValidity();
+  }
+});
+
+function setInvalid(input){
+  inputEmail.setAttribute("aria-invalid", "true");
+}
+
+function setValid(input){
+  inputEmail.setAttribute("aria-invalid", "false");
+}
+
+function validateEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+</script></div>
 </div>
 
 

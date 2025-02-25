@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/newsletter-sign-up-form/assets/css/reset.css">
     <link rel="stylesheet" href="/newsletter-sign-up-form/assets/css/global.css">
     <style></style>
-    <script type="module" src="/newsletter-sign-up-form/assets/js/script.js"></script>
     <title>Newsletter sign-up form</title>
     <meta name="description" content="Frontend Mentor | Newsletter sign-up form with success message">
   </head>
@@ -21,7 +20,7 @@
       <img src="/newsletter-sign-up-form/assets/images/icon-success.svg" alt="" width="50" height="50">
       <h1 id="dialogTitle">Thanks for subscribing!</h1>
       <p id="dialogDescription">
-        A confirmation email has been sent to <b id="email" aria-live="polite"></b>. Please open it and click the button inside to
+        A confirmation email has been sent to <b data-js="emailView" aria-live="polite"></b>. Please open it and click the button inside to
         confirm your subscription.
       </p>
     </div>
@@ -36,7 +35,7 @@ const email = url.searchParams.get('email');
 const decodedEmail = email ? decodeURIComponent(email) : null;
 
 if(decodedEmail){
-  const emailView = document.querySelector("#email");
+  const emailView = document.querySelector('[data-js="emailView"]');
   emailView.textContent = decodedEmail;
 }else {
   window.location.href = "/";

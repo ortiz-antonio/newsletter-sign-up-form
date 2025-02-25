@@ -81,6 +81,7 @@
 .focus\:user-invalid\:outline-offset-0:user-invalid:focus{outline-offset:0px;}
 .focus\:outline-solid:focus{outline-style:solid;}
 .hover\:outline-unset:hover{outline-style:unset;}
+.blur{--un-blur:blur(8px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}
 .focus\:user-invalid\:placeholder-primary:user-invalid:focus::placeholder{--un-placeholder-opacity:1;color:hsl(4 100% 67% / var(--un-placeholder-opacity)) /* hsl(4, 100%, 67%) */;}
 .min-h-svh{min-height:100svh;}
 @media (min-width: 768px){
